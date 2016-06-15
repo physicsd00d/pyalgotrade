@@ -116,3 +116,6 @@ class BarFeed(barfeed.BaseBarFeed):
     def loadAll(self):
         for dateTime, bars in self:
             pass
+
+    def getBars(self, instrument):
+        return self.__bars[instrument]
