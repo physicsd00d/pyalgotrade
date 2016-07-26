@@ -316,11 +316,11 @@ class Broker(broker.Broker):
 
         if order.isBuy():
             cost = price * quantity * -1
-            assert(cost < 0)
+            assert(cost <= 0)
             sharesDelta = quantity
         elif order.isSell():
             cost = price * quantity
-            assert(cost > 0)
+            assert(cost >= 0)
             sharesDelta = quantity * -1
         else:  # Unknown action
             assert(False)
